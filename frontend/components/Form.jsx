@@ -59,7 +59,7 @@ const Form = () => {
       </div>
       <div className="mb-3">
           <label className='text-white mb-2' htmlFor="description">Description</label>
-          <textarea value={descInput} onChange={(e)=>{setDescInput(e.target.value)}} rows="5" className="form-control mb-3" id="description"></textarea>
+          <textarea value={descInput} onChange={(e)=>{setDescInput(e.target.value)}} rows="10" className="form-control mb-3" id="description"></textarea>
       </div>
       <button disabled={disabled} type='submit' className="btn btn-outline-light">Submit</button>
       <ToastContainer

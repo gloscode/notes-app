@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 
 const Notes = () => {
 
@@ -36,16 +35,18 @@ const Notes = () => {
 
   return (
     <div className='container my-5'>
-        <h1 className='text-white mb-5' style={{textDecoration: "underline"}}>{!(notes?.length === 0)?"All Notes":"Notes Not Found!!!"}</h1>
-        <div className='d-flex gap-4 flex-wrap'>
+        <div className="head d-flex">
+          <h1 className='text-white' style={{textDecoration: "underline"}}>{!(notes?.length === 0)?"All Notes":"Notes Not Found!!!"}</h1>
+          <a href='/create' className="btn btn-outline-light ml-5">Create</a>
+        </div>
+        <div className='d-flex gap-4 flex-wrap mt-5'>
           {notes && notes.map((data)=>{
               return (
                 <div key={data._id} className="card" style={{width: "18rem"}}>
                 <div className="card-body">
-                    <Link to={`/${data._id}`} className='link-dark'><h5 className="card-title">{data.title}</h5></Link>
-                    <p className="card-text">{data.description}</p>
-                    <div className="button d-flex gap-2">
-                    <Link to={`/edit/${data._id}`} className="btn btn-outline-dark">Edit</Link>
+                    <a href={`/notes/${data._id}`} className='link-dark'><h5 className="card-title">{data.title}</h5></a>
+                    <div className="button d-flex gap-2 mt-4">
+                    {/* <a href={`/edit/${data._id}`} className="btn btn-outline-dark">Edit</a> */}
                     <button onClick={()=> deleteNote(data)} className="btn btn-outline-danger">Delete</button>
                     </div> 
                 </div>

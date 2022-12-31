@@ -1,5 +1,4 @@
 import React, { useRef } from 'react'
-import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -13,17 +12,17 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
       <div className="container-fluid">
-        <Link className="navbar-brand" to='/'>Notes App</Link>
+        <a className="navbar-brand" href='/'>Notes App</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link to="/" className="nav-link active" aria-current="page">Home</Link>
+              <a href="/" className="nav-link active" aria-current="page">Home</a>
             </li>
             <li className="nav-item">
-              <Link to="/notes" className="nav-link active" aria-current="page">All Notes</Link>
+              <a href="/notes" className="nav-link active" aria-current="page">All Notes</a>
             </li>
           </ul>
           <form onSubmit={goToSearch} className="d-flex" role="search">

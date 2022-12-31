@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -8,20 +8,31 @@ const Edit = () => {
 
   const {id} = useParams();
   const [disabled, setDisabled] = useState(false)
-  const [titleInput, setTitleInput] = useState("")
-  const [descInput, setDescInput] = useState("")
   const [note, setNote] = useState()
+  const navigate = useNavigate();
+  const [titleInput, setTitleInput] = useState(`${localStorage.getItem("title")}`)
+  const [descInput, setDescInput] = useState(`${localStorage.getItem("description")}`)
+
 
   const fetchNotes = async ()=>{
     const response = await axios.get(`http://localhost:3000/${id}`).catch((err)=>console.log(err))
-    const data = await response.data;
-    return data;
+    try {
+      const data = await response.data;
+      return data;
+    } catch (err) {
+      navigate("/notfound")
+    }
   }
 
   useEffect(() => {
-    fetchNotes().then((data)=>{setNote(data)})
+    fetchNotes().then((data)=>{
+      setNote(data)
+      localStorage.setItem("title", `${data.title}`)
+      localStorage.setItem("description", `${data.description}`)
+    })
   }, [])
 
+  
   useEffect(() => {
     if (titleInput === "" || descInput === ""){
       setDisabled(true)
@@ -56,6 +67,8 @@ const Edit = () => {
       theme: "dark",
     });
   }
+
+  
 
   return (
     <form onSubmit={formSubmit} className='container my-5'>
