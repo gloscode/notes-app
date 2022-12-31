@@ -1,35 +1,30 @@
 
-# Text Analyzer
+# Notes App
 
 &nbsp;
 
 ## About this project
 
-Text Analyzer project using HTML, CSS, JS and Bootstrap. It is also publishable project and has many suitable features in manipulating the text 
+Notes App built using MERN Stack. The fontend is built with React, Vite and Bootstrap, the backend is built with Node.js and Express.js and database using MongoDB
 
 &nbsp;
 
 ## File Added
 
-Added JS
+Added .env
 
-````Html
-<script src="script.js"></script>
-````
-Added CSS
-
-````Html
-<link rel="stylesheet" href="style.css">
+````txt
+DATAVASE_URL=YOUR_DATABASE_CONNECTION_STRING
+PORT=PORT
 ````
 
 ## Features
 
-- Converting To Uppercase
-- Converting To Lowercase
-- Copy text
-- Remove Extra Spaces
-- Displaying the number of words and characters
-- Dark Mode
+- CREATE
+- READ
+- UPDATE
+- DELETE
+- SEARCH FOR SPECIFIC NOTES
 
 &nbsp;
 
@@ -37,5 +32,5 @@ Added CSS
 
 &nbsp;
 
-<img src="/images/Vector.svg" alt="Glos Code" width="200">
+<img src="./images/Vector.svg" alt="Glos Code" width="200">
 
