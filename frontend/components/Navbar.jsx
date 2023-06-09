@@ -21,9 +21,9 @@ const Navbar = () => {
             <li className="nav-item">
               <a href="/" className="nav-link active" aria-current="page">Home</a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a href="/notes" className="nav-link active" aria-current="page">All Notes</a>
-            </li>
+            </li> */}
           </ul>
           <form onSubmit={goToSearch} className="d-flex" role="search">
             <input ref={inputRef} className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
