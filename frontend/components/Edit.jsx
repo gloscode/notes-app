@@ -73,7 +73,7 @@ const Edit = () => {
   return (
     <form onSubmit={formSubmit} className='container my-5'>
       <h1 className='text-white' style={{textDecoration: "underline"}}>Editing: {note?.title}</h1>
-      <div className="my-5">
+      <div className="mt-5">
       <div className="mb-3">
           <label className='text-white mb-2' htmlFor="title">Title</label>
           <input value={titleInput} onChange={(e)=>{setTitleInput(e.target.value)}} type="text" className="form-control" id="title"/>

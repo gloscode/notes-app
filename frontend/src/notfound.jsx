@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const NotFound = () => {
   return (
@@ -9,7 +10,7 @@ const NotFound = () => {
             <p className="lead">
                 The page you're looking for doesn't exist.
             </p>
-            <a href="/" className="btn btn-outline-light">Go Home</a>
+            <Link to="/" className="btn btn-outline-light">Go Home</Link>
         </div>
     </div>
   )

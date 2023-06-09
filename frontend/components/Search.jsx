@@ -46,9 +46,8 @@ const Search = () => {
               return (
                 <div key={data._id} className="card" style={{width: "18rem"}}>
                 <div className="card-body">
-                    <Link to={`/${data._id}`} className='link-dark'><h5 className="card-title">{data.title}</h5></Link>
-                    <p className="card-text">{data.description}</p>
-                    <div className="button d-flex gap-2">
+                    <Link to={`/notes/${data._id}`} className='link-dark'><h5 className="card-title">{data.title}</h5></Link>
+                    <div className="button d-flex gap-2 mt-4">
                     <Link to={`/edit/${data._id}`} className="btn btn-outline-dark">Edit</Link>
                     <button onClick={()=> deleteNote(data)} className="btn btn-outline-danger">Delete</button>
                     </div> 
